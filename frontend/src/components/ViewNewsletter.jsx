@@ -10,7 +10,10 @@ const ViewNewsletter = () => {
 
   useEffect(() => {
     // Fetch a single newsletter by ID when the component mounts
-    fetch(`http://localhost:3001/admin/getNewsletter/${newsletterId}`) // Replace with your backend endpoint to fetch a single newsletter
+    fetch(
+      // `http://localhost:3001/admin/getNewsletter/${newsletterId}`
+      `https://automatednewsletter-production.up.railway.app/admin/getNewsletter/${newsletterId}`
+    ) // Replace with your backend endpoint to fetch a single newsletter
       .then((response) => response.json())
       .then((data) => {
         setNewsletter(data);

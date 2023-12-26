@@ -7,7 +7,7 @@ const adminRouter = require("./routes/admin");
 require("dotenv").config();
 
 const MongoPassword = process.env.MongoPassword;
-console.log(MongoPassword);
+// console.log(MongoPassword);
 app.use(cors());
 app.use(express.json());
 

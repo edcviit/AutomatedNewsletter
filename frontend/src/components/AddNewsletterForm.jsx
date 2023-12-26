@@ -41,13 +41,17 @@ const AddNewsletterForm = () => {
       images,
     };
     console.log(data);
-    fetch("http://localhost:3001/admin/addNewsletter", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      // "http://localhost:3001/admin/addNewsletter",
+      "https://automatednewsletter-production.up.railway.app//admin/addNewsletter",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then((response) => response.json())
       .then((result) => {
         console.log("Newsletter added successfully:", result);

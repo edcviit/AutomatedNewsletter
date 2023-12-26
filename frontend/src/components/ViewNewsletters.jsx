@@ -9,7 +9,10 @@ const ViewNewsletters = () => {
   const navigate = useNavigate();
   useEffect(() => {
     // Fetch newsletters when the component mounts
-    fetch("http://localhost:3001/admin/getNewsletters/") // Replace with your backend endpoint to fetch newsletters
+    fetch(
+      // "http://localhost:3001/admin/getNewsletters/"
+      "https://automatednewsletter-production.up.railway.app/admin/getNewsletters/"
+    ) // Replace with your backend endpoint to fetch newsletters
       .then((response) => response.json())
       .then((data) => setNewsletters(data))
       .catch((error) => console.error("Error fetching newsletters:", error));
