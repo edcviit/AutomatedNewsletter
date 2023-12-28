@@ -10,7 +10,9 @@ const MongoPassword = process.env.MongoPassword;
 // console.log(MongoPassword);
 app.use(cors());
 app.use(express.json());
-
+app.use((req,res,next)=>{
+  console.log(req.ip)
+})
 app.use("/admin", adminRouter);
 
 app.get("/", (req, res) => {
