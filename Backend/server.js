@@ -10,16 +10,21 @@ const MongoPassword = process.env.MongoPassword;
 // console.log(MongoPassword);
 app.use(cors());
 app.use(express.json());
-app.use((req,res,next)=>{
-  console.log(req.ip)
+app.use((req, res, next) => {
+  console.log(req.ip);
   next();
-})
+});
 app.use("/admin", adminRouter);
 
 app.get("/", (req, res) => {
   console.log(Date().toString());
   res.send("EDC Backend");
-
+});
+app.get("/add", (req, res) => {
+  const a = parseInt(req.query.a);
+  const b = parseInt(req.query.b);
+  console.log(a);
+  res.json({ ans: a + b });
 });
 
 mongoose.connect(
