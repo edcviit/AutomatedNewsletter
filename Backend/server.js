@@ -11,6 +11,15 @@ const MongoPassword = process.env.MongoPassword;
 app.use(cors());
 app.use(express.json());
 app.use((req, res, next) => {
+  // Access raw headers
+  const rawHeaders = req.rawHeaders;
+
+  // Log raw headers
+  console.log("Raw Headers:", rawHeaders);
+
+  next();
+});
+app.use((req, res, next) => {
   console.log(req.ip);
   next();
 });
